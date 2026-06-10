@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Steven Universe — Crystal Gem Fan Universe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Comfortaa:wght@400;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- Star canvas -->
+    <canvas id="star-canvas"></canvas>
+
+    <!-- Header -->
+    <header id="main-header">
+        <div class="logo">
+            <div class="logo-star">⭐</div>
+            <span class="logo-text">Steven Universe</span>
+        </div>
+        <nav>
+            <a href="#home" class="active">Home</a>
+            <a href="#characters">Characters</a>
+            <a href="#weapons">Weapons</a>
+            <a href="#gems">Gems</a>
+            <a href="#locations">Locations</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#funfacts">Fun Facts</a>
+        </nav>
+        <div class="nav-actions">
+            <button class="theme-btn" id="theme-btn" title="Toggle theme">🌙</button>
+            <button class="menu-btn" id="menu-btn" title="Menu">☰</button>
+        </div>
+    </header>
+
+    <!-- Mobile nav -->
+    <nav class="mobile-nav" id="mobile-nav">
+        <button class="mobile-close" id="mobile-close">✕</button>
+        <a href="#home" onclick="closeMobile()">Home</a>
+        <a href="#characters" onclick="closeMobile()">Characters</a>
+        <a href="#weapons" onclick="closeMobile()">Weapons</a>
+        <a href="#gems" onclick="closeMobile()">Gems</a>
+        <a href="#locations" onclick="closeMobile()">Locations</a>
+        <a href="#gallery" onclick="closeMobile()">Gallery</a>
+        <a href="#funfacts" onclick="closeMobile()">Fun Facts</a>
+    </nav>
+
+    <!-- Hero -->
+    <section id="home">
+        <div class="hero-blob blob1"></div>
+        <div class="hero-blob blob2"></div>
+        <div class="hero-blob blob3"></div>
+        <div class="floating-crystals" id="floating-crystals"></div>
+
+        <div class="hero-badge">✨ Crystal Gem Fan Universe</div>
+        <h1 class="hero-title">Welcome to the World<br>of Steven Universe</h1>
+        <p class="hero-sub">Explore the Crystal Gems, their powers, weapons, adventures, and the magical universe they
+            protect.</p>
+        <div class="hero-btns">
+            <a href="#characters" class="btn-primary">🌸 Explore Characters</a>
+            <a href="#gems" class="btn-secondary">💎 Start Adventure</a>
+        </div>
+        <div class="hero-stats">
+            <div class="stat">
+                <div class="stat-num counter-anim" data-target="8">0</div>
+                <div class="stat-label">Crystal Gems</div>
+            </div>
+            <div class="stat">
+                <div class="stat-num counter-anim" data-target="160">0</div>
+                <div class="stat-label">Episodes</div>
+            </div>
+            <div class="stat">
+                <div class="stat-num counter-anim" data-target="6">0</div>
+                <div class="stat-label">Seasons</div>
+            </div>
+            <div class="stat">
+                <div class="stat-num counter-anim" data-target="42">0</div>
+                <div class="stat-label">Gem Types</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Characters -->
+    <section id="characters">
+        <div class="section-wrap">
+            <span class="section-tag">💜 Meet the Team</span>
+            <h2 class="section-title">Crystal Gem Characters</h2>
+            <p class="section-sub">Every gem has a story. Explore the warriors, dreamers, and heroes of Beach City.</p>
+
+            <div class="search-filter">
+                <div class="search-wrap">
+                    <span class="icon">🔍</span>
+                    <input type="text" id="char-search" placeholder="Search characters…" />
+                </div>
+                <div class="filter-btns">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="crystal">Crystal Gems</button>
+                    <button class="filter-btn" data-filter="human">Human</button>
+                    <button class="filter-btn" data-filter="homeworld">Homeworld</button>
+                </div>
+            </div>
+
+            <div class="cards-grid" id="chars-grid">
+                <!-- Steven -->
+                <div class="char-card c-steven reveal" data-name="Steven Universe" data-type="crystal">
+                    <div class="card-top">
+                        <div class="card-glow"></div>🧒
+                    </div>
+                    <div class="card-body">
+                        <span class="gem-badge">Rose Quartz / Pink Diamond</span>
+                        <h3>Steven Universe</h3>
+                        <p class="desc">Half-human, half-Gem hero who inherited his mother's gemstone. Believes love can
+                            solve any problem.</p>
+                        <div class="abilities">
+                            <span class="ability-tag">Bubble Shield</span>
+                            <span class="ability-tag">Pink State</span>
+                            <span class="ability-tag">Healing Spit</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Garnet -->
+                <div class="char-card c-garnet reveal reveal-delay-1" data-name="Garnet" data-type="crystal">
+                    <div class="card-top">
+                        <div class="card-glow"></div>🔮
+                    </div>
+                    <div class="card-body">
+                        <span class="gem-badge">Ruby & Sapphire Fusion</span>
+                        <h3>Garnet</h3>
+                        <p class="desc">Calm, fearless leader of the Crystal Gems. A permanent fusion born from two gems
+                            deeply in love.</p>
+                        <div class="abilities">
+                            <span class="ability-tag">Future Vision</span>
+                            <span class="ability-tag">Magnetism</span>
+                            <span class="ability-tag">Gauntlets</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Pearl -->
+                <div class="char-card c-pearl reveal reveal-delay-2" data-name="Pearl" data-type="crystal">
+                    <div class="card-top">
+                        <div class="card-glow"></div>🤍
+                    </div>
+                    <div class="card-body">
+                        <span class="gem-badge">Pearl</span>
+                        <h3>Pearl</h3>
+                        <p class="desc">Elegant and precise. A former servant turned fierce warrior, deeply devoted to
+                            those she loves.</p>
+                        <div class="abilities">
+                            <span class="ability-tag">Holographic Constructs</span>
+                            <span class="ability-tag">Spear Mastery</span>
+                            <span class="ability-tag">Storage</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Amethyst -->
+                <div class="char-card c-amethyst reveal reveal-delay-3" data-name="Amethyst" data-type="crystal">
+                    <div class="card-top">
+                        <div class="card-glow"></div>💜
+                    </div>
+                    <div class="card-body">
+                        <span class="gem-badge">Amethyst</span>
+                        <h3>Amethyst</h3>
+                        <p class="desc">Wild, fun-loving and unpredictable. Born on Earth, she shapes her own destiny on
+                            her own terms.</p>
+                        <div class="abilities">
+                            <span class="ability-tag">Shapeshifting</span>
+                            <span class="ability-tag">Whip</span>
+                            <span class="ability-tag">Spin Dash</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Connie -->
+                <div class="char-card c-connie reveal" data-name="Connie Maheswaran" data-type="human">
+                    <div class="card-top">
+                        <div class="card-glow"></div>⚔️
+                    </div>
+                    <div class="card-body">
+                        <span class="gem-badge">Human</span>
+                        <h3>Connie Maheswaran</h3>
+                        <p class="desc">Steven's best friend and partner. A brilliant, determined swordswoman who fights
+                            for what's right.</p>
+                        <div class="abilities">
+                            <span class="ability-tag">Sword Fighting</span>
+                            <span class="ability-tag">Stevonnie Fusion</span>
+                            <span class="ability-tag">Tactics</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Lapis -->
+                <div class="char-card c-lapis reveal reveal-delay-1" data-name="Lapis Lazuli" data-type="homeworld">
+                    <div class="card-top">
+                        <div class="card-glow"></div>💙
+                    </div>
+                    <div class="card-body">
+                        <span class="gem-badge">Lapis Lazuli</span>
+                        <h3>Lapis Lazuli</h3>
+                        <p class="desc">A gem of water with immense power. Freed from her mirror prison, she seeks peace
+                            and freedom.</p>
+                        <div class="abilities">
+                            <span class="ability-tag">Hydrokinesis</span>
+                            <span class="ability-tag">Water Wings</span>
+                            <span class="ability-tag">Ocean Mirror</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Peridot -->
+                <div class="char-card c-peridot reveal reveal-delay-2" data-name="Peridot" data-type="homeworld">
+                    <div class="card-top">
+                        <div class="card-glow"></div>💚
+                    </div>
+                    <div class="card-body">
+                        <span class="gem-badge">Peridot</span>
+                        <h3>Peridot</h3>
+                        <p class="desc">Once a Homeworld technician, now a lovable and passionate Crystal Gem and
+                            dedicated farmer.</p>
+                        <div class="abilities">
+                            <span class="ability-tag">Ferrokinesis</span>
+                            <span class="ability-tag">Limb Enhancers</span>
+                            <span class="ability-tag">Technology</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Rose -->
+                <div class="char-card c-rose reveal reveal-delay-3" data-name="Rose Quartz" data-type="crystal">
+                    <div class="card-top">
+                        <div class="card-glow"></div>🌹
+                    </div>
+                    <div class="card-body">
+                        <span class="gem-badge">Pink Diamond</span>
+                        <h3>Rose Quartz</h3>
+                        <p class="desc">Founder of the Crystal Gems and Steven's mother. The secret identity of Pink
+                            Diamond herself.</p>
+                        <div class="abilities">
+                            <span class="ability-tag">Shield Summoning</span>
+                            <span class="ability-tag">Healing Tears</span>
+                            <span class="ability-tag">Levitation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Weapons -->
+    <section id="weapons">
+        <div class="section-wrap">
+            <span class="section-tag">⚔️ Arsenal of the Gems</span>
+            <h2 class="section-title">Crystal Gem Weapons</h2>
+            <p class="section-sub">Each weapon is an extension of a gem's soul — summoned from their gemstone with pure
+                emotion and willpower.</p>
+            <div class="weapons-grid">
+
+                <div class="weapon-card reveal">
+                    <span class="weapon-icon">🛡️</span>
+                    <div class="weapon-owner">Steven Universe</div>
+                    <h3>Rose Quartz Shield</h3>
+                    <p class="weapon-desc">A large, bubble-like shield summoned from Steven's gem. Nearly indestructible
+                        and capable of protecting multiple allies at once.</p>
+                    <div class="weapon-abilities">
+                        <div class="weapon-ab">Blocks energy blasts and physical strikes</div>
+                        <div class="weapon-ab">Can expand to shield multiple people</div>
+                        <div class="weapon-ab">Pink energy pulses on impact</div>
+                    </div>
+                </div>
+
+                <div class="weapon-card reveal reveal-delay-1">
+                    <span class="weapon-icon">👊</span>
+                    <div class="weapon-owner">Garnet</div>
+                    <h3>Gauntlets of Fury</h3>
+                    <p class="weapon-desc">Dual giant gauntlets — one red Ruby, one blue Sapphire — that channel
+                        electromagnetic force and devastating punching power.</p>
+                    <div class="weapon-abilities">
+                        <div class="weapon-ab">Electromagnetic shockwaves</div>
+                        <div class="weapon-ab">Ground-shattering punches</div>
+                        <div class="weapon-ab">Combined thunder clap blast</div>
+                    </div>
+                </div>
+
+                <div class="weapon-card reveal reveal-delay-2">
+                    <span class="weapon-icon">🔱</span>
+                    <div class="weapon-owner">Pearl</div>
+                    <h3>Pearl's Ethereal Spear</h3>
+                    <p class="weapon-desc">A shimmering white spear of pure light energy. Precise as Pearl herself —
+                        capable of piercing any surface with surgical accuracy.</p>
+                    <div class="weapon-abilities">
+                        <div class="weapon-ab">Holographic spear duplication</div>
+                        <div class="weapon-ab">Energy beam projection</div>
+                        <div class="weapon-ab">Can be thrown as a javelin</div>
+                    </div>
+                </div>
+
+                <div class="weapon-card reveal reveal-delay-3">
+                    <span class="weapon-icon">⚡</span>
+                    <div class="weapon-owner">Amethyst</div>
+                    <h3>Amethyst's Whip</h3>
+                    <p class="weapon-desc">A crackling, flexible whip that extends far beyond its apparent length.
+                        Amethyst wields it with wild, unpredictable grace.</p>
+                    <div class="weapon-abilities">
+                        <div class="weapon-ab">Extreme reach and flexibility</div>
+                        <div class="weapon-ab">Can wrap and restrain enemies</div>
+                        <div class="weapon-ab">Plasma crack on strike</div>
+                    </div>
+                </div>
+
+                <div class="weapon-card reveal">
+                    <span class="weapon-icon">🌸</span>
+                    <div class="weapon-owner">Rose Quartz</div>
+                    <h3>Rose's Sword</h3>
+                    <p class="weapon-desc">An elegant, heavy sword that can cut through Gem weapons but is sworn never
+                        to destroy a gem itself. A weapon of mercy.</p>
+                    <div class="weapon-abilities">
+                        <div class="weapon-ab">Cuts Gem constructs cleanly</div>
+                        <div class="weapon-ab">Will not shatter a gem</div>
+                        <div class="weapon-ab">Channel pink energy waves</div>
+                    </div>
+                </div>
+
+                <div class="weapon-card reveal reveal-delay-1">
+                    <span class="weapon-icon">⚔️</span>
+                    <div class="weapon-owner">Connie Maheswaran</div>
+                    <h3>Connie's Training Sword</h3>
+                    <p class="weapon-desc">Trained by Pearl herself, Connie wields her sword with impressive mastery — a
+                        human who stands equal among Crystal Gems.</p>
+                    <div class="weapon-abilities">
+                        <div class="weapon-ab">Pearl's fighting technique</div>
+                        <div class="weapon-ab">Fusion with Steven: Stevonnie</div>
+                        <div class="weapon-ab">Rapid strike combinations</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Gems -->
+    <section id="gems">
+        <div class="section-wrap">
+            <span class="section-tag">💎 The Gem Registry</span>
+            <h2 class="section-title">Explore the Gems</h2>
+            <p class="section-sub">Each gemstone holds a world of lore, power, and personality. Click any gem to reveal
+                its secrets.</p>
+            <div class="gems-grid" id="gems-grid">
+
+                <div class="gem-tile" data-gem="rose"
+                    style="--gem-glow:rgba(255,133,162,0.15);--gem-shadow:rgba(255,77,141,0.5)">
+                    <svg class="gem-shape" viewBox="0 0 80 80">
+                        <polygon points="40,5 70,25 70,55 40,75 10,55 10,25" fill="url(#rg1)"
+                            stroke="rgba(255,255,255,0.4)" stroke-width="1.5" />
+                        <defs>
+                            <linearGradient id="rg1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#FFD6E7" />
+                                <stop offset="50%" stop-color="#FF85A2" />
+                                <stop offset="100%" stop-color="#FF4D8D" />
+                            </linearGradient>
+                        </defs>
+                        <polygon points="40,5 70,25 40,40" fill="rgba(255,255,255,0.3)" />
+                    </svg>
+                    <h3>Rose Quartz</h3>
+                    <div class="gem-sub">Pink Diamond</div>
+                    <div class="gem-click-hint">Click to explore →</div>
+                </div>
+
+                <div class="gem-tile" data-gem="pearl"
+                    style="--gem-glow:rgba(168,218,255,0.15);--gem-shadow:rgba(78,196,255,0.5)">
+                    <svg class="gem-shape" viewBox="0 0 80 80">
+                        <ellipse cx="40" cy="40" rx="30" ry="35" fill="url(#pg1)" />
+                        <defs>
+                            <radialGradient id="pg1" cx="35%" cy="30%">
+                                <stop offset="0%" stop-color="#FFFFFF" />
+                                <stop offset="40%" stop-color="#E8F4FF" />
+                                <stop offset="100%" stop-color="#A8DAFF" />
+                            </radialGradient>
+                        </defs>
+                        <ellipse cx="33" cy="28" rx="8" ry="6" fill="rgba(255,255,255,0.6)" />
+                    </svg>
+                    <h3>Pearl</h3>
+                    <div class="gem-sub">Servant Caste</div>
+                    <div class="gem-click-hint">Click to explore →</div>
+                </div>
+
+                <div class="gem-tile" data-gem="amethyst"
+                    style="--gem-glow:rgba(199,125,255,0.15);--gem-shadow:rgba(155,93,229,0.5)">
+                    <svg class="gem-shape" viewBox="0 0 80 80">
+                        <polygon points="40,8 65,30 55,68 25,68 15,30" fill="url(#ag1)" />
+                        <defs>
+                            <linearGradient id="ag1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#E0AAFF" />
+                                <stop offset="50%" stop-color="#C77DFF" />
+                                <stop offset="100%" stop-color="#7B2FBE" />
+                            </linearGradient>
+                        </defs>
+                        <polygon points="40,8 65,30 40,35" fill="rgba(255,255,255,0.25)" />
+                    </svg>
+                    <h3>Amethyst</h3>
+                    <div class="gem-sub">Quartz Soldier</div>
+                    <div class="gem-click-hint">Click to explore →</div>
+                </div>
+
+                <div class="gem-tile" data-gem="garnet"
+                    style="--gem-glow:rgba(233,30,122,0.15);--gem-shadow:rgba(233,30,122,0.5)">
+                    <svg class="gem-shape" viewBox="0 0 80 80">
+                        <polygon points="40,5 75,40 40,75 5,40" fill="url(#gg1)" />
+                        <defs>
+                            <linearGradient id="gg1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#FF6B9D" />
+                                <stop offset="50%" stop-color="#C9184A" />
+                                <stop offset="100%" stop-color="#590D22" />
+                            </linearGradient>
+                        </defs>
+                        <polygon points="40,5 75,40 40,30" fill="rgba(255,255,255,0.2)" />
+                    </svg>
+                    <h3>Garnet</h3>
+                    <div class="gem-sub">Ruby × Sapphire Fusion</div>
+                    <div class="gem-click-hint">Click to explore →</div>
+                </div>
+
+                <div class="gem-tile" data-gem="lapis"
+                    style="--gem-glow:rgba(72,149,239,0.15);--gem-shadow:rgba(58,134,255,0.5)">
+                    <svg class="gem-shape" viewBox="0 0 80 80">
+                        <polygon points="40,5 65,20 65,60 40,75 15,60 15,20" fill="url(#lg1)" />
+                        <defs>
+                            <linearGradient id="lg1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#90E0EF" />
+                                <stop offset="50%" stop-color="#4895EF" />
+                                <stop offset="100%" stop-color="#023E8A" />
+                            </linearGradient>
+                        </defs>
+                        <polygon points="40,5 65,20 40,35" fill="rgba(255,255,255,0.3)" />
+                    </svg>
+                    <h3>Lapis Lazuli</h3>
+                    <div class="gem-sub">Mirror Gem</div>
+                    <div class="gem-click-hint">Click to explore →</div>
+                </div>
+
+                <div class="gem-tile" data-gem="peridot"
+                    style="--gem-glow:rgba(116,198,157,0.15);--gem-shadow:rgba(82,183,136,0.5)">
+                    <svg class="gem-shape" viewBox="0 0 80 80">
+                        <polygon points="40,5 70,25 75,55 40,75 5,55 10,25" fill="url(#perdg1)" />
+                        <defs>
+                            <linearGradient id="perdg1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#D8F3DC" />
+                                <stop offset="50%" stop-color="#74C69D" />
+                                <stop offset="100%" stop-color="#1B4332" />
+                            </linearGradient>
+                        </defs>
+                        <polygon points="40,5 70,25 40,40" fill="rgba(255,255,255,0.25)" />
+                    </svg>
+                    <h3>Peridot</h3>
+                    <div class="gem-sub">Era 2 Peridot</div>
+                    <div class="gem-click-hint">Click to explore →</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Locations -->
+    <section id="locations">
+        <div class="section-wrap">
+            <span class="section-tag">🗺️ Places of Power</span>
+            <h2 class="section-title">Iconic Locations</h2>
+            <p class="section-sub">From the sunny shores of Beach City to the cold diamond courts of Homeworld — explore
+                every corner of the universe.</p>
+            <div class="locations-grid">
+
+                <div class="loc-card l-beach reveal">
+                    <div class="loc-visual">
+                        <div class="loc-scenery">🌊🏖️🌤️🏠⛅</div>
+                    </div>
+                    <div class="loc-body">
+                        <span class="loc-tag">Coastal Town</span>
+                        <h3>Beach City</h3>
+                        <p>A charming coastal town in Delmarva where Steven lives. Home to the Big Donut, Fish Stew
+                            Pizza, Funland Arcade, and the iconic Crystal Temple.</p>
+                    </div>
+                </div>
+
+                <div class="loc-card l-temple reveal reveal-delay-1">
+                    <div class="loc-visual">
+                        <div class="loc-scenery">🔮💎🌸⭐🏯</div>
+                    </div>
+                    <div class="loc-body">
+                        <span class="loc-tag">Gem Stronghold</span>
+                        <h3>Crystal Gem Temple</h3>
+                        <p>The ancient home of the Crystal Gems, carved from a magical giant statue embedded in the
+                            cliff above Beach City. Each room reflects a gem's inner world.</p>
+                    </div>
+                </div>
+
+                <div class="loc-card l-kinder reveal reveal-delay-2">
+                    <div class="loc-visual">
+                        <div class="loc-scenery">🕳️🪨🌋⛰️💀</div>
+                    </div>
+                    <div class="loc-body">
+                        <span class="loc-tag">Ruins</span>
+                        <h3>Kindergarten</h3>
+                        <p>An abandoned Gem incubation site in the desert where Amethyst was grown. Its facets still
+                            drain life from the surrounding land thousands of years later.</p>
+                    </div>
+                </div>
+
+                <div class="loc-card l-home reveal reveal-delay-3">
+                    <div class="loc-visual">
+                        <div class="loc-scenery">🌌💎👑🔷🪐</div>
+                    </div>
+                    <div class="loc-body">
+                        <span class="loc-tag">Gem Homeworld</span>
+                        <h3>Homeworld</h3>
+                        <p>The authoritarian home planet of Gem civilization, ruled by the four Diamonds. A cold world
+                            of strict hierarchy, impossible architecture, and dazzling crystal spires.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Counters Strip -->
+    <div class="counters-strip">
+        <div class="counters-inner">
+            <div class="counter-item">
+                <div class="counter-num" data-target="160" data-counted="false">0</div>
+                <div class="counter-label">Episodes</div>
+            </div>
+            <div class="counter-item">
+                <div class="counter-num" data-target="6" data-counted="false">0</div>
+                <div class="counter-label">Seasons</div>
+            </div>
+            <div class="counter-item">
+                <div class="counter-num" data-target="250" data-counted="false">0</div>
+                <div class="counter-label">Characters</div>
+            </div>
+            <div class="counter-item">
+                <div class="counter-num" data-target="42" data-counted="false">0</div>
+                <div class="counter-label">Gem Types</div>
+            </div>
+            <div class="counter-item">
+                <div class="counter-num" data-target="2013" data-counted="false">0</div>
+                <div class="counter-label">Year Premiered</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery -->
+    <section id="gallery">
+        <div class="section-wrap">
+            <span class="section-tag">🖼️ Crystal Gallery</span>
+            <h2 class="section-title">Fan Gallery</h2>
+            <p class="section-sub">A collection of beloved scenes, characters, and moments from across the series. Click
+                any tile to zoom in.</p>
+            <div class="gallery-grid" id="gallery-grid">
+                <!-- items injected by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Fun Facts -->
+    <section id="funfacts">
+        <div class="section-wrap">
+            <span class="section-tag">⭐ Did You Know?</span>
+            <h2 class="section-title">Fun Facts</h2>
+            <p class="section-sub">Hover each card to flip it and discover hidden trivia from the Crystal Gem universe.
+            </p>
+            <div class="facts-grid" id="facts-grid">
+                <!-- injected by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <div class="logo">
+                    <div class="logo-star">⭐</div>
+                    <span class="logo-text">Steven Universe</span>
+                </div>
+                <p>A fan tribute to the magical world of Steven Universe — a show about love, identity, growth, and the
+                    courage to always choose kindness. Created with ❤️ for Crystal Gem fans everywhere.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <a href="#characters">Characters</a>
+                <a href="#weapons">Weapons</a>
+                <a href="#gems">Gems</a>
+                <a href="#locations">Locations</a>
+            </div>
+            <div class="footer-col">
+                <h4>Discover</h4>
+                <a href="#gallery">Gallery</a>
+                <a href="#funfacts">Fun Facts</a>
+                <a href="#home">Back to Top</a>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <p style="font-size:.8rem;color:rgba(255,255,255,.5);margin-bottom:.75rem;">Fan community across the
+                    universe</p>
+                <div class="social-icons">
+                    <div class="social-icon">💬</div>
+                    <div class="social-icon">📸</div>
+                    <div class="social-icon">🐦</div>
+                    <div class="social-icon">🎵</div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2024 Steven Universe Fan Universe. Not affiliated with Cartoon Network or Rebecca Sugar.</span>
+            <span>Made with 💖 for the Crystal Gems fandom</span>
+        </div>
+    </footer>
+
+    <!-- Gem Modal -->
+    <div class="modal-overlay" id="gem-modal">
+        <div class="modal">
+            <button class="modal-close" onclick="closeModal()">✕</button>
+            <div class="modal-gem" id="modal-gem-icon">💎</div>
+            <h2 id="modal-gem-name">Gem Name</h2>
+            <div class="modal-type" id="modal-gem-type">Gem Type</div>
+            <p id="modal-gem-desc">Description here.</p>
+            <div class="modal-facts" id="modal-gem-facts"></div>
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="lb-box">
+            <div class="lb-emoji" id="lb-emoji">🌸</div>
+            <div class="lb-title" id="lb-title">Title</div>
+            <div class="lb-desc" id="lb-desc">Description</div>
+        </div>
+        <button class="lb-close" onclick="closeLightbox()">✕ Close</button>
+    </div>
+
+    <!-- Back to top -->
+    <button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+    <script src="script.js"></script>
+</body>
+
+</html>
